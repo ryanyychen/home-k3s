@@ -17,3 +17,5 @@ crash.log
 *.p12
 *.pfx
 *.crt
+
+argo-credentials.txt
