@@ -1,13 +1,16 @@
-resource "helm_release" "ingress_nginx" {
-	count = var.enable_ingress_nginx ? 1 : 0
+# K3s installs and manages Traefik by default. Enable this release only when
+# the server was installed with --disable=traefik.
+resource "helm_release" "traefik" {
+  count = var.install_traefik ? 1 : 0
 
-	name             = "ingress-nginx"
-	namespace        = "ingress-nginx"
-	create_namespace = true
-	repository       = "https://kubernetes.github.io/ingress-nginx"
-	chart            = "ingress-nginx"
-	version          = "4.12.0"
-	atomic           = true
-	cleanup_on_fail  = true
-	wait             = true
+  name             = "traefik"
+  namespace        = "kube-system"
+  create_namespace = false
+  repository       = "https://traefik.github.io/charts"
+  chart            = "traefik"
+  version          = var.traefik_chart_version
+  atomic           = true
+  cleanup_on_fail  = true
+  wait             = true
+  timeout          = 600
 }

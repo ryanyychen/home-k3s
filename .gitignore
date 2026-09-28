@@ -1,6 +1,19 @@
 .terraform/
 *.tfstate
 *.tfstate.*
+*.tfplan
 crash.log
 *.tfvars
 !terraform/terraform.tfvars.example
+
+# Local Kubernetes credentials and private key material
+.kube/
+**/kubeconfig
+**/kubeconfig.*
+**/k3s.yaml
+**/home-k3s.yaml
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt

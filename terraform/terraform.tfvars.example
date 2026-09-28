@@ -1,8 +1,15 @@
-# Copy this file to terraform.tfvars and adjust the values for your cluster.
-kube_context = "docker-desktop"
+# Copy this file to terraform.tfvars and adjust it for the kubeconfig visible
+# from the environment where Terraform runs.
+kubeconfig_path = "~/.kube/home-k3s.yaml"
+kube_context    = null
 
 # Keep this pointed at the fork/repository Argo CD should watch.
-repository_url = "https://github.com/ryanyychen/home-k8s.git"
+repository_url      = "https://github.com/ryanyychen/home-k8s.git"
+repository_revision = "main"
 
-# Set true when the cluster has a reachable HTTP entry point.
-enable_ingress_nginx = false
+# Standard K3s already installs Traefik. Set this to true only if K3s was
+# installed with --disable=traefik.
+install_traefik = false
+
+# Chart used only to create the root apps Application after Argo CD's CRDs exist.
+argocd_apps_chart_version = "2.0.5"
