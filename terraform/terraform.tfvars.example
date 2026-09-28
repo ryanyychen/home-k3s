@@ -4,7 +4,7 @@ kubeconfig_path = "~/.kube/home-k3s.yaml"
 kube_context    = null
 
 # Keep this pointed at the fork/repository Argo CD should watch.
-repository_url      = "https://github.com/ryanyychen/home-k8s.git"
+repository_url      = "https://github.com/ryanyychen/home-k3s.git"
 repository_revision = "main"
 
 # Standard K3s already installs Traefik. Set this to true only if K3s was

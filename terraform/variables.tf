@@ -25,7 +25,7 @@ variable "argocd_apps_chart_version" {
 variable "repository_url" {
   description = "Git repository Argo CD watches for Application manifests."
   type        = string
-  default     = "https://github.com/ryanyychen/home-k8s.git"
+  default     = "https://github.com/ryanyychen/home-k3s.git"
 }
 
 variable "repository_revision" {

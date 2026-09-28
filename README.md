@@ -1,4 +1,4 @@
-# home-k8s
+# home-k3s
 
 This repository bootstraps Argo CD into a local K3s cluster with Terraform, then separates platform software from application repositories:
 
