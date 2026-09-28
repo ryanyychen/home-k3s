@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars and adjust the values for your cluster.
+kube_context = "docker-desktop"
+
+# Keep this pointed at the fork/repository Argo CD should watch.
+repository_url = "https://github.com/ryanyychen/home-k8s.git"
+
+# Set true when the cluster has a reachable HTTP entry point.
+enable_ingress_nginx = false
