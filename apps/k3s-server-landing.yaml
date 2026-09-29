@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k3s-server-landing
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ryanyychen-home/k3s-server-landing.git
+    targetRevision: main
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: k3s-server-landing
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
