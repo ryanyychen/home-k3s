@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ryanyychen-home/k3s-server-landing.git
     targetRevision: main
-    path: .
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: k3s-server-landing
